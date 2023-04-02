@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "@agsolutions/eslint-config/react"
+  ]
+}

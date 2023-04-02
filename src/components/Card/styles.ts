@@ -26,6 +26,7 @@ export const ContainerLink = styled.a`
 `;
 
 export const Content = styled.div`
+  min-height: 230px;
   box-sizing: border-box;
 
   background: ${props => props.theme.colors.card.bg};

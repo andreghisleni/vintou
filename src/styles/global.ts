@@ -55,11 +55,11 @@ export default createGlobalStyle`
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 30px;
     padding: 0 10px;
   }
   h3 {
-    font-size: 34px;
+    font-size: 26px;
     margin-bottom: 20px;
 
     &.normal {
@@ -69,7 +69,7 @@ export default createGlobalStyle`
   }
   h4 {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 20px;
   }
 

@@ -19,5 +19,13 @@ export const theme = {
         },
       },
     },
+    card: {
+      bg: '#0D0D0D',
+      header: '#FFD38C',
+      content: '#FFFFFF',
+      primary: '#F9A319',
+      border: '#4B391A',
+      borderHover: '#5E4B2E',
+    },
   },
 };

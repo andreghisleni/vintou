@@ -6,7 +6,7 @@ import React, {
   useMemo,
 } from 'react';
 import ReactSelect, {
-  OptionTypeBase,
+  OptionTypeBase, // eslint-disable-line
   Props as SelectProps,
 } from 'react-select';
 import { useField } from '@unform/core';
@@ -20,7 +20,6 @@ interface Props extends SelectProps<OptionTypeBase> {
   name: string;
   containerStyle?: object;
   icon?: React.ComponentType<IconBaseProps>;
-  dark?: boolean;
   border?: boolean;
   label?: string;
   required?: boolean;
@@ -29,7 +28,6 @@ const Select: React.FC<Props> = ({
   name,
   containerStyle = {},
   icon: Icon,
-  dark = true,
   border = true,
   label,
   required = false,
@@ -77,7 +75,6 @@ const Select: React.FC<Props> = ({
       isFocused={isFocused}
       isFilled={isField}
       isErrored={!!error}
-      dark={dark}
       border={border}
     >
       {label && (
@@ -86,7 +83,7 @@ const Select: React.FC<Props> = ({
           {required && <strong> *</strong>}
         </label>
       )}
-      <div className={rest.disabled ? 'disabled' : ''}>
+      <div className={rest.isDisabled ? 'disabled' : ''}>
         {Icon && <Icon size={16} />}
 
         <ReactSelect

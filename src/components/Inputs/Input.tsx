@@ -16,7 +16,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   containerStyle?: object;
   icon?: React.ComponentType<IconBaseProps>;
-  dark?: boolean;
   border?: boolean;
   label?: string;
   required?: boolean;
@@ -25,7 +24,6 @@ const Input: React.FC<InputProps> = ({
   name,
   containerStyle = {},
   icon: Icon,
-  dark = true,
   border = true,
   label,
   required = false,
@@ -62,7 +60,6 @@ const Input: React.FC<InputProps> = ({
       isFocused={isFocused}
       isFilled={isField}
       isErrored={!!error}
-      dark={dark}
       border={border}
     >
       {label && (

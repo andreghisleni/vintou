@@ -8,14 +8,13 @@ interface ContainerProps {
   isFilled: boolean;
   isErrored: boolean;
   border: boolean;
-  dark: boolean;
+
   maxWidth?: string | number;
   multiline?: boolean;
 }
 
 interface PasswordForceProps {
   value: number;
-  dark: boolean;
 }
 
 interface CopyProps {
@@ -37,8 +36,7 @@ export const Container = styled.div<ContainerProps>`
   }
 
   label {
-    color: ${props =>
-      props.theme.colors.form[props.dark ? 'dark' : 'light'].input.text};
+    color: ${props => props.theme.colors.form.input.text};
     strong {
       color: ${props => props.theme.colors.primary};
     }
@@ -52,36 +50,23 @@ export const Container = styled.div<ContainerProps>`
     margin-top: 8px;
   }
   > div {
-    background: ${props =>
-      props.theme.colors.form[props.dark ? 'dark' : 'light'].input.bg};
+    background: ${props => props.theme.colors.form.input.bg};
 
     .InputSelect,
     .InputSelect__control,
     .InputSelect__menu {
-      background: ${props =>
-        props.theme.colors.form[props.dark ? 'dark' : 'light'].input.bg};
+      background: ${props => props.theme.colors.form.input.bg};
       .InputSelect__option,
       .InputSelect__single-value {
-        color: ${props =>
-          props.theme.colors.form[props.dark ? 'dark' : 'light'].input.text};
+        color: ${props => props.theme.colors.form.input.text};
 
         &.InputSelect__option--is-selected {
-          color: ${props =>
-            props.theme.colors.form[props.dark ? 'dark' : 'light'].input.text};
-          background: ${props =>
-            shade(
-              0.1,
-              props.theme.colors.form[props.dark ? 'dark' : 'light'].input.bg,
-            )};
+          color: ${props => props.theme.colors.form.input.text};
+          background: ${props => shade(0.1, props.theme.colors.form.input.bg)};
         }
         &.InputSelect__option--is-focused {
-          color: ${props =>
-            props.theme.colors.form[props.dark ? 'dark' : 'light'].input.text};
-          background: ${props =>
-            shade(
-              0.1,
-              props.theme.colors.form[props.dark ? 'dark' : 'light'].input.bg,
-            )};
+          color: ${props => props.theme.colors.form.input.text};
+          background: ${props => shade(0.1, props.theme.colors.form.input.bg)};
         }
       }
     }
@@ -107,12 +92,9 @@ export const Container = styled.div<ContainerProps>`
     display: flex;
     align-items: center;
 
-    border: 0.2px solid
-      ${props =>
-        props.theme.colors.form[props.dark ? 'dark' : 'light'].input.border};
+    border: 0.2px solid ${props => props.theme.colors.form.input.border};
 
-    color: ${props =>
-      props.theme.colors.form[props.dark ? 'dark' : 'light'].input.text};
+    color: ${props => props.theme.colors.form.input.text};
     ${props =>
       props.isErrored &&
       css`
@@ -140,8 +122,7 @@ export const Container = styled.div<ContainerProps>`
     > div.InputSelect {
       width: 100%;
       label {
-        color: ${props =>
-          props.theme.colors.form[props.dark ? 'dark' : 'light'].input.text};
+        color: ${props => props.theme.colors.form.input.text};
       }
     }
     input,
@@ -157,8 +138,7 @@ export const Container = styled.div<ContainerProps>`
 
       font-size: 16px;
 
-      color: ${props =>
-        props.theme.colors.form[props.dark ? 'dark' : 'light'].input.text};
+      color: ${props => props.theme.colors.form.input.text};
 
       flex: 1;
 
@@ -166,45 +146,28 @@ export const Container = styled.div<ContainerProps>`
         outline: 0;
       }
       &::placeholder {
-        color: ${props =>
-          props.theme.colors.form[props.dark ? 'dark' : 'light'].input
-            .placeholder};
+        color: ${props => props.theme.colors.form.input.placeholder};
       }
       &:disabled {
-        color: ${props =>
-          props.theme.colors.form[props.dark ? 'dark' : 'light'].input
-            .placeholder};
+        color: ${props => props.theme.colors.form.input.placeholder};
         .InputSelect,
         .InputSelect__control {
-          background: ${props =>
-            shade(
-              0.1,
-              props.theme.colors.form[props.dark ? 'dark' : 'light'].input.bg,
-            )};
+          background: ${props => shade(0.1, props.theme.colors.form.input.bg)};
         }
       }
       &:-webkit-autofill,
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus {
         -webkit-text-fill-color: ${props =>
-          shade(
-            -0.8,
-            props.theme.colors.form[props.dark ? 'dark' : 'light'].input.text,
-          )};
-        box-shadow: 0 0 0px 1000px
-          ${props =>
-            props.theme.colors.form[props.dark ? 'dark' : 'light'].input.bg}
+          shade(-0.8, props.theme.colors.form.input.text)};
+        box-shadow: 0 0 0px 1000px ${props => props.theme.colors.form.input.bg}
           inset;
 
         transition: background-color 5000s ease-in-out 0s;
       }
     }
     &.disabled {
-      background: ${props =>
-        shade(
-          0.1,
-          props.theme.colors.form[props.dark ? 'dark' : 'light'].input.bg,
-        )};
+      background: ${props => shade(0.1, props.theme.colors.form.input.bg)};
     }
 
     textarea {
@@ -233,11 +196,7 @@ export const Error = styled(Tooltip)`
 export const Copy = styled.div<CopyProps>`
   height: 52px;
   border-left: 0.4px solid
-    ${props =>
-      shade(
-        0.3,
-        props.theme.colors.form[props.dark ? 'dark' : 'light'].input.border,
-      )};
+    ${props => shade(0.3, props.theme.colors.form.input.border)};
 
   width: 52px;
 
@@ -253,12 +212,7 @@ export const Copy = styled.div<CopyProps>`
 
   :hover {
     cursor: pointer;
-    color: ${props =>
-      shade(
-        -0.2,
-        props.theme.colors.form[props.dark ? 'dark' : 'light'].input
-          .placeholder,
-      )};
+    color: ${props => shade(-0.2, props.theme.colors.form.input.placeholder)};
   }
 `;
 
@@ -270,8 +224,7 @@ export const PasswordForce = styled.progress<PasswordForceProps>`
   height: 4px;
   &::-webkit-progress-bar {
     border-radius: 0px 0px 10px 10px;
-    background: ${props =>
-      props.theme.colors.form[props.dark ? 'dark' : 'light'].input.bg};
+    background: ${props => props.theme.colors.form.input.bg};
   }
 
   &::-webkit-progress-value {
@@ -286,17 +239,12 @@ export const PasswordForce = styled.progress<PasswordForceProps>`
     background: ${props =>
       props.value !== undefined &&
       (props.value <= 25
-        ? props.theme.colors.form[props.dark ? 'dark' : 'light'].input.progress
-            .red
+        ? props.theme.colors.form.input.progress.red
         : props.value <= 50
-        ? props.theme.colors.form[props.dark ? 'dark' : 'light'].input.progress
-            .orange
+        ? props.theme.colors.form.input.progress.orange
         : props.value <= 75
-        ? props.theme.colors.form[props.dark ? 'dark' : 'light'].input.progress
-            .yellow
-        : props.value <= 100 &&
-          props.theme.colors.form[props.dark ? 'dark' : 'light'].input.progress
-            .green)};
+        ? props.theme.colors.form.input.progress.yellow
+        : props.value <= 100 && props.theme.colors.form.input.progress.green)};
   }
 `;
 

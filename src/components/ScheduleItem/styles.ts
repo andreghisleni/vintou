@@ -23,7 +23,7 @@ export const Container = styled.div`
       display: flex;
       justify-content: center;
       width: 100%;
-      border-bottom: 0.5px solid ${props => props.theme.colors.divider};
+      border-bottom: 0.5px solid ${props => props.theme.colors.text};
       margin-bottom: 10px;
     }
   }
@@ -40,7 +40,7 @@ export const Container = styled.div`
     padding: 20px 0;
     @media (min-width: 701px) {
       width: 80px;
-      border-right: 0.5px solid ${props => props.theme.colors.divider};
+      border-right: 0.5px solid ${props => props.theme.colors.text};
     }
   }
   > div {

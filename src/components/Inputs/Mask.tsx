@@ -12,7 +12,6 @@ interface InputProps extends Props {
   containerStyle?: object;
   icon?: React.ComponentType<IconBaseProps>;
   maskPlaceholder?: string;
-  dark?: boolean;
   border?: boolean;
   label?: string;
   required?: boolean;
@@ -22,7 +21,6 @@ const InputMask: React.FC<InputProps> = ({
   containerStyle = {},
   icon: Icon,
   maskPlaceholder = '_',
-  dark = true,
   border = true,
   label,
   required = false,
@@ -57,7 +55,6 @@ const InputMask: React.FC<InputProps> = ({
       isFocused={isFocused}
       isFilled={isField}
       isErrored={!!error}
-      dark={dark}
       border={border}
     >
       {label && (

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.footer`
   position: relative;
-  background: ${props => props.theme.colors.footer.background[0]};
+  background: ${props => props.theme.colors.background};
   width: 100%;
   height: 150px;
 
@@ -12,7 +12,7 @@ export const Container = styled.footer`
     position: absolute;
     display: flex;
     justify-content: center;
-    background: ${props => props.theme.colors.footer.background[1]};
+    background: ${props => props.theme.colors.background};
     width: 100%;
     height: 100px;
     bottom: 0;

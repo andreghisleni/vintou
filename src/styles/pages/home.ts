@@ -1,3 +1,4 @@
+import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 
 export const ContainerImages = styled.div`
@@ -68,4 +69,12 @@ export const CardsContainer = styled.div`
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 12px;
   }
+`;
+
+export const CardContainerOne = styled.div`
+  padding: 40px;
+`;
+
+export const ReactPlayerStyled = styled(ReactPlayer)`
+  width: auto;
 `;

@@ -1,5 +1,13 @@
+'use-strict';
+
 import { Card } from '@/components/Card';
-import { CardsContainer, Container } from '@styles/pages/home';
+import {
+  CardContainerOne,
+  CardsContainer,
+  Container,
+  ReactPlayerStyled,
+} from '@styles/pages/home';
+
 import React from 'react';
 
 const Home: React.FC = () => {
@@ -23,6 +31,21 @@ const Home: React.FC = () => {
           Abrir no google maps
         </Card>
       </CardsContainer>
+      <CardContainerOne>
+        <Card
+          title="Vídeo de como chegar na chácara"
+          noText
+          // go="/video"
+          contentStyle={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <ReactPlayerStyled url="https://youtu.be/0A0t0Oewsf8" />
+        </Card>
+      </CardContainerOne>
     </Container>
   );
 };

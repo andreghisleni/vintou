@@ -6,25 +6,33 @@ interface ICard {
   title: string;
   children: React.ReactNode;
   go?: string;
+  noText?: boolean;
+  contentStyle?: React.CSSProperties;
 }
-export const Card: React.FC<ICard> = ({ title, children, go }) => {
+export const Card: React.FC<ICard> = ({
+  title,
+  children,
+  go,
+  noText,
+  contentStyle,
+}) => {
   if (go) {
     return (
       <ContainerLink href={go} target="_blank">
-        <Content>
+        <Content style={contentStyle}>
           <header>{title}</header>
 
-          <h3>{children}</h3>
+          {noText ? children : <h3>{children}</h3>}
         </Content>
       </ContainerLink>
     );
   }
   return (
     <Container>
-      <Content>
+      <Content style={contentStyle}>
         <header>{title}</header>
 
-        <h3>{children}</h3>
+        {noText ? children : <h3>{children}</h3>}
       </Content>
     </Container>
   );
